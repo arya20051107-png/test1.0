@@ -270,8 +270,18 @@
             </div>
 
             <!-- Bottom Navigation & Upgrade Menus -->
-            <div class="bg-slate-950/95 border-t border-purple-950/80 z-20 relative">
-                <div class="flex justify-around border-b border-purple-950/40 text-center text-[11px]">
+<!-- Bottom Navigation & Upgrade Menus -->
+            <div class="z-20 relative">
+                <!-- 收合箭頭按鈕 -->
+                <div class="absolute -top-[22px] left-1/2 transform -translate-x-1/2 z-30">
+                    <button onclick="toggleBottomMenu()" class="bg-slate-950/95 border-t border-l border-r border-purple-950/80 px-8 py-0.5 rounded-t-xl text-purple-400 hover:text-white transition flex items-center justify-center cursor-pointer shadow-[0_-5px_10px_rgba(88,28,135,0.1)]">
+                        <i id="toggle-menu-icon" class="fa-solid fa-chevron-down"></i>
+                    </button>
+                </div>
+                
+                <!-- 選單內容主體 (加入 id 以便透過 JS 控制) -->
+                <div id="bottom-menu-body" class="bg-slate-950/95 border-t border-purple-950/80 w-full transition-all">
+                    <div class="flex justify-around border-b border-purple-950/40 text-center text-[11px]">
                     <button onclick="switchTab('upgrades')" id="tab-btn-upgrades" class="flex-1 py-2.5 text-purple-400 border-b-2 border-purple-500 font-bold transition flex flex-col items-center gap-0.5 bg-purple-950/10">
                         <i class="fa-solid fa-angles-up"></i>
                         <span>強化</span>
@@ -642,6 +652,7 @@
                 </button>
             </div>
         </div>
+		
 
         <!-- ACHIEVEMENT MODAL -->
         <div id="modal-achievements" class="hidden absolute inset-0 z-[160] bg-slate-950/98 backdrop-blur-md p-5 flex flex-col justify-between overflow-hidden">
@@ -2683,6 +2694,23 @@
             document.getElementById('screen-welcome').classList.remove('hidden');
             
             switchTab('upgrades');
+        }
+		// --- 10. UI TOGGLE LOGIC (選單收合功能) ---
+        function toggleBottomMenu() {
+            const body = document.getElementById('bottom-menu-body');
+            const icon = document.getElementById('toggle-menu-icon');
+            
+            if (body.classList.contains('hidden')) {
+                // 展開選單
+                body.classList.remove('hidden');
+                icon.className = "fa-solid fa-chevron-down";
+                AudioEngine.playTap(); // 播放點擊音效
+            } else {
+                // 隱藏選單
+                body.classList.add('hidden');
+                icon.className = "fa-solid fa-chevron-up";
+                AudioEngine.playTap(); // 播放點擊音效
+            }
         }
     </script>
 </body>

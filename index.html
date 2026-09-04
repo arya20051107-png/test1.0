@@ -145,7 +145,8 @@
                     </button>
                     
                     <!-- BGM Toggle Button -->
-                    <button onclick="toggleBGM()" class="text-[10px] bg-slate-800 border border-slate-600 text-slate-400 px-2.5 py-1.5 rounded-xl hover:text-white transition active:scale-95 shadow">
+                    <button onclick="toggleBGM()" class="text-[10px] bg-slate-800 
+					border border-slate-600 text-slate-400 px-2.5 py-1.5 rounded-xl hover:text-white transition active:scale-95 shadow">
                         <i id="icon-bgm" class="fa-solid fa-volume-xmark"></i>
                     </button>
 
@@ -250,7 +251,7 @@
                     <div id="monster-glow" class="absolute w-36 h-36 rounded-full bg-purple-500/20 filter blur-2xl pointer-events-none"></div>
                     <div id="orbiting-partners" class="absolute inset-0 pointer-events-none z-20"></div>
                     <div id="monster-container" class="z-10 transition-transform duration-75 pointer-events-none">
-                        <img id="monster-img" src="" onerror="this.src='https://placehold.co/200x200/transparent/3b82f6?text=Monster'" class="w-100 h-100 object-contain drop-shadow-[0_10px_15px_rgba(139,92,246,0.3)] animate-float">
+                        <img id="monster-img" src="" onerror="this.src='https://placehold.co/200x200/transparent/3b82f6?text=Monster'" class="w-50 h-50 object-contain drop-shadow-[0_10px_15px_rgba(139,92,246,0.3)] animate-float">
                     </div>
                 </div>
 
@@ -1522,7 +1523,7 @@
             
             ownedInCurrentFloor.forEach((p, idx) => {
                 const angle = (idx / ownedInCurrentFloor.length) * 2 * Math.PI;
-                const radius = 136; 
+                const radius = 100; 
                 const x = Math.cos(angle) * radius + 96 - 16; 
                 const y = Math.sin(angle) * radius + 96 - 16;
                 

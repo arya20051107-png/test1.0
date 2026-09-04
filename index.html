@@ -210,7 +210,7 @@
             </div>
 
             <!-- Battle Arena Zone -->
-            <div id="battle-field" class="relative flex-1 flex flex-col justify-center gap-3 items-center py-2 px-4 cursor-pointer overflow-hidden min-h-0" onclick="handleTapMonster(event)">
+            <div id="battle-field" class="relative flex-1 flex flex-col justify-start gap-6 items-center pt-6 pb-12 px-4 cursor-pointer overflow-y-auto" onclick="handleTapMonster(event)">
                 
                 <!-- Target HP Bar & Control Buttons -->
                 <div class="w-full max-w-[280px] text-center pointer-events-none z-30 mt-2">
@@ -246,8 +246,8 @@
                 </div>
 
                 <!-- 👾【画像差し替えポイント】怪物＆ボス表示エリア (images/monster_f[階層]_[0-2].png 與 boss_f[階層].png) -->
-                <div class="relative w-40 h-40 sm:w-48 sm:h-48 flex justify-center items-center select-none shrink-0">
-                    <div id="monster-glow" class="absolute w-32 h-32 sm:w-36 sm:h-36 rounded-full bg-purple-500/20 filter blur-2xl pointer-events-none"></div>
+                <div class="relative w-48 h-48 flex justify-center items-center select-none">
+                    <div id="monster-glow" class="absolute w-36 h-36 rounded-full bg-purple-500/20 filter blur-2xl pointer-events-none"></div>
                     <div id="orbiting-partners" class="absolute inset-0 pointer-events-none z-20"></div>
                     <div id="monster-container" class="z-10 transition-transform duration-75 pointer-events-none">
                         <img id="monster-img" src="" onerror="this.src='https://placehold.co/200x200/transparent/3b82f6?text=Monster'" class="w-100 h-100 object-contain drop-shadow-[0_10px_15px_rgba(139,92,246,0.3)] animate-float">
@@ -295,7 +295,7 @@
                 </div>
 
                 <!-- Tab Contents Container -->
-                <div class="h-[32vh] min-h-[180px] overflow-y-auto px-4 pt-3 pb-8">
+                <div class="h-60 overflow-y-auto px-4 pt-3 pb-12">
                     
                     <!-- TAB 1: UPGRADES -->
                     <div id="tab-upgrades" class="space-y-3">
